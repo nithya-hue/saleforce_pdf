@@ -30,12 +30,13 @@ class StringRequestModel(BaseModel):
     string2: str
 
 @app.post("/store_strings")
-def store_strings(request: StringRequestModel):
-
+#def store_strings(request: StringRequestModel):
+def store_strings(string1):
     global apikey
  
-    apikey  = request.string1
-    store['string2'] = request.string2
+    #apikey  = request.string1
+    #store['string2'] = request.string2
+    apikey=string1
 
     return {"message": "Strings stored successfully"}
 
